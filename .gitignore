@@ -1,0 +1,32 @@
+# 忽略文件和目录
+# --------------------------------------
+
+# 忽略编辑器临时文件
+*.swp
+*.swo
+*.swx
+._*
+
+# 忽略媒体库上传的文件
+wp-content/uploads/
+
+# 忽略 WordPress 更新下载的文件
+wp-content/upgrade/
+
+# 忽略缓存文件
+wp-content/cache/
+
+# 忽略备份数据库的文件
+wp-content/backup-db/
+
+# 忽略日志文件
+*.log
+
+# 忽略配置文件
+wp-config.php
+
+# 忽略 Apache 配置文件
+.htaccess
+
+# 忽略本地配置文件
+wp-config-local.php
