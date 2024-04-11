@@ -6,44 +6,71 @@ Version: 1.0
 
 */
 body {
-     background: #e1dfdfbb;
+     background: #ff0000bb;
 }
 
 a {
      text-decoration: none !important;
      color: inherit !important;
-  
+
 
 }
 
 /* header style */
 header {
      width: 100%;
-     height: 100px;
+     height: auto;
      padding: 0;
      margin-bottom: 20px;
-
-
+     display: flex;
+     align-items: center;
+     display: flex;
+     flex-direction: column;
+     overflow: hidden;
+     background-color: #AEFDE3;
 }
 
 /* site name */
 .name {
      font-size: xx-large;
      font-weight: bolder;
-     text-align: center;
+     margin-left: 5rem;
      line-height: 100px;
 }
 
+/* search form */
+#searchform {
+     vertical-align: middle;
+}
+
+#searchform #searchsubmit {
+     background-color: #0B5ED7;
+     color: #ffffff;
+     border-radius: 5px;
+
+}
+
+#searchform #searchsubmit:hover {
+     background-color: #0b4295;
+}
+
+#searchform .screen-reader-text {
+     display: none;
+
+}
+
+/* navbar menu */
 .navbar-box {
      display: flex;
      justify-content: flex-end;
+     height: 50px;
 
 }
 
 .navbar-box .nav-list {
      display: flex;
      list-style: none;
-     height: 50px;
+
      /* background-color: red; */
 
 }
@@ -62,15 +89,38 @@ header {
 
 }
 
+/* Hero section */
+.hero {
+     width: 100%;
+     height: 500px;
+     position: relative;
+}
+
+.hero img {
+     width: 100%;
+     height: auto;
+     position: absolute;
+
+}
+
+.hero .title {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-20%, -50%);
+     color: white;
 
 
+}
+
+.hero .title span {
+     font-size: 80px;
+     font-weight: bolder;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0.9);
+}
 
 
-
-
-
-
-
+/* posts */
 
 .list .btn {
      color: white !important;
@@ -110,4 +160,53 @@ header {
      background-color: #0B5ED7;
      color: white !important;
      border-radius: 50%;
+}
+
+/* sidebar */
+.sidebar {
+     position: absolute;
+     /* background-color: red; */
+     top:620px;
+     right: 5px;
+     /* text-align: left; */
+@media screen and (max-width: 997px) {
+     display:none;
+   }
+}
+
+.sidebar-2{
+     position: absolute;
+     /* background-color: red; */
+     top: 120px;
+     right: 5px;
+@media screen and (max-width: 997px) {
+          display: none;
+     }
+}
+
+ .sidebarbox{
+     /* border:1px solid black; */
+     margin-top: 50px;
+     margin-bottom: 50px;
+     border-radius: 10px;
+     box-shadow: 1px 1px 2px 1px rgb(22, 22, 22,0.5);
+     background-color: rgb(174, 253, 227);
+}
+
+.widget-calendar #wp-calendar {
+text-align: center;
+margin: 0 auto;
+
+  
+}
+
+.widget-archive .wp-block-archives-list,.wp-block-heading {
+list-style: none;
+text-align: center;
+padding: 1rem;
+}
+
+.widget-navigation .widget-title, .menu-all-pages{
+     text-align: center;
+          padding: 1rem;
 }

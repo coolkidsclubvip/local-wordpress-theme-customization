@@ -7,8 +7,8 @@
                 <h2><a href="' . get_permalink() . '">' . get_the_title() . '</a></h2>';
     the_excerpt();
     echo '<div class="date-line">
-                    <span>' . get_the_date('d-m-y') . '，作者：' . get_the_author() . '</span>
-                    <a href="' . get_permalink() . '" class="btn btn-primary mt-3">查看详情</a>
+                    <span><b>' . get_the_date('d-m-y') . ',  Author:</b> ' . get_the_author() . '</span>
+                    <a href="' . get_permalink() . '" class="btn btn-primary mt-3">Read</a>
                 </div>
 
         </div>';

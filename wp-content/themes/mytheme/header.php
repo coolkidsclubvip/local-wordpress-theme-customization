@@ -11,32 +11,45 @@
 </head>
 <body>
      <header >
-    <div class="container-fluid d-flex px-0">
-          <div class="name bg-primary w-50">
+    <div class="container-fluid d-flex px-0 ">
+          <div class="name  w-50">
               <!-- Blog/site name -->
-            <a href="<?php echo home_url() ?>"><?php echo bloginfo(" ");
-?></a>   
+            <a href="<?php echo home_url() ?>">
+             <?php echo bloginfo(" "); ?>
+            </a>
 
           </div>
-          <div class="navbar bg-light w-50 d-flex justify-content-end">
-          <?php echo wp_nav_menu(array(
+          <div class="navbar  w-50 d-flex justify-content-end">
+                        <?php
+// render search bar
+get_search_form();
+
+// render header nav bar
+echo wp_nav_menu(array(
     'container' => 'div', //容器标签
     'container_class' => 'navbar-box', //ul文共点class值
- 
+
     'theme_location' => 'primary', //导航别名
     'items_wrap' => '<ul class="nav-list">%3$s</ul>', //包装列表
 ));
 ?>
 
           </div>
+
     </div>
+<!-- Hero image -->
+<!-- only show hero when on homepage -->
+<?php
+if (is_home()) {?>
+
+<div class="hero">
+<img src="<?php echo get_template_directory_uri() ?>/assets/images/couple.jpg" alt="">
+<div class="title"> <span> Wordpress Blog with Custom Theme</span></div>
+</div>
+
+<?php
+}
+?>
 
 
-
-
-
-
-
-
-
-     </header>
+</header>
