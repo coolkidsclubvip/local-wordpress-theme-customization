@@ -16,9 +16,19 @@ the_title('<h1>', '</h1>');
 $author_url = get_author_posts_url(get_the_author_meta('ID'));
 echo '<a href="' . $author_url . '" >' . get_the_author() . '</a>';
 // render the date and time
-echo get_the_date('d-m-y');
+echo '<span class="ms-3">' . get_the_date('d-m-y') . '</span> ';
+// Article category
+$cateArr = get_the_category(get_the_ID());
+echo '<span class="px-2">' . "Category: " . '</span>';
+foreach ($cateArr as $key => $value) {
+    echo '<span class="px-1">' . $value->cat_name . '|' . '</span>';
+}
+;
+
 // render the content
 echo '<div  class="mt-5 p-0 w-75">' . get_the_content() . '</div> ';
+// Inner page divider
+wp_link_pages();
 
 ?>
    </div>
@@ -34,7 +44,7 @@ the_post_navigation(
 ?>
    </div>
    <!-- comments -->
-    <div class="comments">
+    <div class="comments mb-5">
     <?php
 echo comments_template()
 ?>
@@ -52,7 +62,7 @@ echo comments_template()
 
 </div><!-- .container -->
 
-
+<div class=" py-5 mt-5"> </div>
 
 <?php
 get_footer();

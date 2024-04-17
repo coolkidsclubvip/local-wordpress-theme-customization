@@ -5,9 +5,19 @@ Author:Lei Wang
 Version: 1.0
 
 */
-body {
-     background: #ff0000bb;
+/* 定义变量 */
+:root {
+     --green-color: #46D98D;
+     --lightGreen-color: #AEFDE3;
+     /* 主色 */
+     --beige-color: #FAF4E9;
+     /* 次色 */
+     --blueLight-color: #2b6ed4;
+     --blueDark-color: #0057d8;
+
 }
+
+body {}
 
 
 a {
@@ -16,7 +26,7 @@ a {
 }
 
 a:hover {
-     color: #0B5ED7;
+     color: var(--blueDark-color);
 }
 
 /* header style */
@@ -30,7 +40,7 @@ header {
      display: flex;
      flex-direction: column;
      overflow: hidden;
-     background-color: #AEFDE3;
+     background-color: var(--green-color);
 }
 
 /* site name */
@@ -47,14 +57,14 @@ header {
 }
 
 #searchform #searchsubmit {
-     background-color: #0B5ED7;
+     background-color: var(--blueLight-color);
      color: #ffffff;
      border-radius: 5px;
 
 }
 
 #searchform #searchsubmit:hover {
-     background-color: #0b4295;
+     background-color: var(--blueDark-color);
 }
 
 #searchform .screen-reader-text {
@@ -86,7 +96,8 @@ header {
 
 .navbar-box .nav-list li a:hover {
      text-align: center;
-     background-color: #0B5ED7;
+     background-color: var(--blueDark-color);
+     ;
      color: white !important;
      border-radius: 3px;
 
@@ -117,6 +128,15 @@ header {
 
 
 /* posts */
+.container {
+     min-height: 160vh;
+     /*  push footer to the bottom */
+
+}
+
+.container .row .col {
+     min-height: 30vh;
+}
 
 /* limit content video and img sizes */
 .container video {
@@ -134,7 +154,7 @@ header {
 
 .list {
 
-     background-color: rgb(244, 248, 226);
+     background-color: var(--beige-color);
      border: 1px solid #000000bb;
      box-shadow: 1px 5px 5px #000000bb;
      border-radius: 5px;
@@ -146,6 +166,17 @@ header {
      justify-content: space-between;
 }
 
+/* page divider pagination style */
+.post-nav-links .post-page-numbers.current {
+     background-color: var(--lightGreen-color);
+     width: 30px;
+     height: 30px;
+     border-radius: 50%;
+     text-align: center;
+     line-height: 30px;
+     display: inline-block;
+}
+
 /* pagination style */
 
 .nav-pagination ul .page-numbers {
@@ -155,14 +186,14 @@ header {
 
 .nav-pagination ul .page-numbers:hover {
 
-     color: #0B5ED7;
+     color: var(--blueDark-color);
 }
 
 .nav-pagination ul .current {
      width: 25px;
      height: 25px;
      text-align: center;
-     background-color: #0B5ED7;
+     background-color: var(--blueDark-color);
      color: white !important;
      border-radius: 50%;
 }
@@ -197,7 +228,7 @@ header {
      margin-bottom: 50px;
      border-radius: 10px;
      box-shadow: 1px 1px 2px 1px rgb(22, 22, 22, 0.5);
-     background-color: rgb(174, 253, 227);
+     background-color: var(--lightGreen-color);
 }
 
 .widget-calendar #wp-calendar {
@@ -236,35 +267,40 @@ header {
 }
 
 .nav-title:hover {
-     color: #0B5ED7
+     color: var(--blueDark-color)
 }
 
 /* comments.php */
 
-.comments-box{
+.comments-box {
      width: 60vw;
-      border-radius: 10px;
-      padding: 10%;
+     border-radius: 10px;
+     padding: 10%;
      box-shadow: 1px 1px 5px rgb(52, 51, 51);
 }
 
 /* comment number bg */
 .comments-box h4 span {
-     background-color: darkgrey;
-     padding: 1px 5px;
-     border-radius:15px;
-     
+     background-color: var(--lightGreen-color);
+     display: inline-block;
+     width: 30px;
+     height: 30px;
+     text-align: center;
+     line-height: 30px;
+     border-radius: 50%;
+
 }
 
-.comments-box .comment-list{
+.comments-box .comment-list {
      display: flex;
      justify-content: flex-start;
-     list-style:none;
+     list-style: none;
      border-bottom: 1px dashed #565656;
      margin-bottom: 20px;
-      
+
 }
-.comments_content .edit_line{
+
+.comments_content .edit_line {
      /* display: flex; */
      /* justify-content: flex-start; */
      list-style: none;
@@ -272,5 +308,29 @@ header {
 }
 
 .comments .comment-body .url:hover {
-     color: #0B5ED7
+     color: var(--blueDark-color)
+}
+
+
+/* Footer style */
+footer {
+     width: 100%;
+     bottom: 0;
+     background-color: var(--green-color);
+     padding: 20px 0;
+     text-align: center;
+}
+
+footer .container-fluid {
+     max-width: 1200px;
+
+}
+
+footer .row {
+     display: flex;
+     justify-content: center;
+}
+
+footer .col {
+     flex-basis: 100%;
 }

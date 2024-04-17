@@ -11,5 +11,7 @@
 <?php the_comments_pagination();?>
 
 <!--comment input  -->
-<?php comment_form();?>
+<?php comment_form( array ('fields' => array(
+   'author' =>'Please enter your name: <input type="text" name="author">'
+)));?>
 </div>
