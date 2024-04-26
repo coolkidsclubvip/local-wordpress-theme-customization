@@ -2,7 +2,24 @@
 get_header();
 ?>
 
+
+
+  <!-- Hero image -->
+  <!-- only show hero when on homepage -->
+  <?php if (is_home()) {?>
+    <div class="hero">
+      <div class="video">
+        <!-- <span> Wordpress Blog with Custom Theme</span> -->
+        <video class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/Nature.mp4" autoplay muted></video>
+      </div>
+    </div>
+  <?php }?>
+
+
+
+
 <div class="container">
+    
 
   <div id="lists" class="row">
 

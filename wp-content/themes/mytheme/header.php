@@ -10,49 +10,44 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-     <header >
-    <div class="container-fluid d-flex px-0 ">
-          <div class="name  w-50">
-              <!-- Blog/site name -->
-            <a href="<?php echo home_url() ?>">
-             <?php echo bloginfo(" "); ?>
-            </a>
+     <header class="sticky-top">
+  <div class="container-fluid d-flex px-0 nav-bar">
+    <div class="name w-50">
+      <!-- Blog/site name -->
+      <a href="<?php echo home_url() ?>">
+       <span class="text-light"><?php echo bloginfo(" "); ?></span>
+      </a>
+    </div>
 
-          </div>
-          <div class="navbar  w-50 d-flex justify-content-end">
-                        <?php
-// render search bar
-get_search_form();
+    <!-- Bootstrap navbar -->
+   <nav class="navbar navbar-expand-lg nav-list px-0 ms-auto">
+  <!-- Hamburger icon for small screens -->
+  <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-// render header nav bar
+  <!-- Navigation links -->
+  <div class="collapse navbar-collapse d-lg-block ms-auto" id="navbarNav">
+    <?php
+// Render header nav bar using wp_nav_menu
 echo wp_nav_menu(array(
-    'container' => 'div', //容器标签
-    'container_class' => 'navbar-box', //ul文共点class值
-
-    'theme_location' => 'primary', //导航别名
-    'items_wrap' => '<ul class="nav-list">%3$s</ul>', //包装列表
+    'container' => 'div',
+    'container_class' => 'nav-list ',
+    'theme_location' => 'primary',
+    'items_wrap' => '<ul class="navbar-nav flex-shrink-0">%3$s</ul>',
+    'menu_class' => 'navbar-nav',
+    'fallback_cb' => false, // Prevents default fallback menu from being displayed
 ));
 ?>
-
-          </div>
-
-    </div>
-<!-- Hero image -->
-<!-- only show hero when on homepage -->
-<?php
-if (is_home()) {?>
-
-<div class="hero">
-
-<div class="video">
-  <!-- <span> Wordpress Blog with Custom Theme</span> -->
-  <video src="<?php echo get_template_directory_uri() ?>/assets/Nature.mp4" autoplay muted></video>
-</div>
-</div>
-
-<?php
-}
+    <div class="px-3">
+      <?php
+// render search bar
+get_search_form();
 ?>
+    </div>
+  </div>
+</nav>
 
+  </div>
 
 </header>

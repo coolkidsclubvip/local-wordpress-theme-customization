@@ -108,3 +108,21 @@ function custom_comment($comment, $args, $depth)
 </li>
 <?php
 }
+
+// Get read times
+function get_read_times($post_id)
+{
+    $count = get_post_meta($post_id, 'read_times', true);
+    if (!$count) {return 0;} else {return $count;}
+};
+// Set read times
+function set_read_times($post_id)
+{
+    // get previous count
+    $count = get_read_times($post_id);
+    // if ($count===0){
+
+    // }
+    update_post_meta($post_id, 'read_times', $count + 1);
+    return $count;
+}
